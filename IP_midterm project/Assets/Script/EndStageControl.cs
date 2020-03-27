@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+// This class control the end stage's score and text display
 public class EndStageControl : MonoBehaviour
 {
     public GameObject Text;

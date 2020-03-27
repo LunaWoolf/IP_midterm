@@ -2,17 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class check individual dots of paint
 public class Paint : MonoBehaviour
 {
     public Material paint;
     public Material unpaint;
     public bool ispaint = false;
-    void Start()
-    {
-        
-    }
 
- 
     void Update()
     {
         if (ispaint)

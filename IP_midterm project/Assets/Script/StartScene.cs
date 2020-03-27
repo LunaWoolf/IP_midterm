@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// This switch the start scene to the dialogue scene
 public class StartScene : MonoBehaviour
 {
 

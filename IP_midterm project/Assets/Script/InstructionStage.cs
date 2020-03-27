@@ -3,15 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+// This switch the instruction scene to the game stage
 public class InstructionStage : MonoBehaviour
 {
     public Animator trans;
-
-    void Start()
-    {
-     
-    }
-
 
     public void nextScene()
     {

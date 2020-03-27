@@ -4,17 +4,14 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
 
+// This class control the ghost moving and coliiding with player
 public class Ghost : MonoBehaviour
 {
     public int pattern;
     public NavMeshAgent na;
-    public GameObject[] points;
-    public int cur;
-    public Vector3 target;
     public GameObject Player;
     public Animator trans;
 
-    //public float speed;
 
     void Start()
     {
@@ -24,7 +21,7 @@ public class Ghost : MonoBehaviour
   
     void Update()
     {
-        
+        // nav mesh path finding
         if (na.hasPath == false && na.velocity == Vector3.zero)
         {
             na.SetDestination(Player.transform.position);

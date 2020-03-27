@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This script check is the paint finish and send message when it's
 public class pattern : MonoBehaviour
 {
     public Material paint;

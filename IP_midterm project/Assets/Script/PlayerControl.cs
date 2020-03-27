@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+// This class control all the interaction with mouse and ray cast
 public class PlayerControl : MonoBehaviour
 {
     public float rayLength;
@@ -23,13 +24,14 @@ public class PlayerControl : MonoBehaviour
     public int score = 0;
 
 
-
     void Update()
     {
         if (Input.GetMouseButton(0))
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            // choose the ghost to deal with
             if (Physics.Raycast(ray, out hit, rayLength, layermask))
             {
                 if (hit.collider.gameObject.tag == "Ghost")
@@ -73,6 +75,7 @@ public class PlayerControl : MonoBehaviour
                     }
                 }
 
+                // paint
                 if (hit.collider.gameObject.tag == "Paint")
                 {
                     hit.collider.gameObject.GetComponent<MeshRenderer>().material = curPattern.GetComponent<pattern>().paint;

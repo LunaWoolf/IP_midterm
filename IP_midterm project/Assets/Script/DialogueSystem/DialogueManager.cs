@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class DialogueManager : MonoBehaviour
 {
     //——————————————————————————————————————————————————————————————————————————Dialogue Set up

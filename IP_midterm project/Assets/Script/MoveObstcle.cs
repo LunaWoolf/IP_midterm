@@ -2,23 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class contorl the movement of nav mesh obstrcle
 public class MoveObstcle : MonoBehaviour
 {
     public float minlimit;
-    public float maxlimit =0.5f;
+    public float maxlimit;
     public int dir = 1;
     public float movespeed;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
-
-       
         if (this.transform.position.x < minlimit)
         {
             dir = 1;
