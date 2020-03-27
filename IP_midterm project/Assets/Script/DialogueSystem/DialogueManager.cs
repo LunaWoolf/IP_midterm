@@ -77,8 +77,6 @@ public class DialogueManager : MonoBehaviour
 
     public void endDialogue(Dialogue dialogue)
     {
-
-
         if (!dialogue.hasquestion)
         {
           
