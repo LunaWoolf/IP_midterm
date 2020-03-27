@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2d78d37b6054326b030b2a1eff844f, type: 3}
+  m_Name: Dia03
+  m_EditorClassIdentifier: 
+  name: '?'
+  hasquestion: 1
+  question:
+    que: I told you this person does not qualify, Horse Face
+    Choice:
+    - choice: 'Horse Face?
+
+'
+      nextDialogue: {fileID: 11400000, guid: 61ffe499899ca44d798294c3058b295b, type: 2}
+      image: {fileID: 0}
+  characterimage01: 0
+  characterimage02: 1
+  sentence:
+  - "You don\u2019t know us?\n"
+  - I told you this person does not qualify, Horse Face
+  nextdialogue: {fileID: 0}

@@ -13,13 +13,24 @@ MonoBehaviour:
   m_Name: Dia02
   m_EditorClassIdentifier: 
   name: '?'
-  hasquestion: 0
+  hasquestion: 1
   question:
-    que: 
-    Choice: []
-  characterimage01: 0
-  characterimage02: 1
+    que: 'Can you hear me?
+
+'
+    Choice:
+    - choice: 'Yes.
+
+'
+      nextDialogue: {fileID: 11400000, guid: c858b13d0f0064868be5fa00c66e8667, type: 2}
+      image: {fileID: 0}
+    - choice: "Who are you? \n"
+      nextDialogue: {fileID: 11400000, guid: c858b13d0f0064868be5fa00c66e8667, type: 2}
+      image: {fileID: 0}
+  characterimage01: 1
+  characterimage02: 0
   sentence:
-  - W
-  - Are you okay!
+  - 'Can you hear me?
+
+'
   nextdialogue: {fileID: 0}

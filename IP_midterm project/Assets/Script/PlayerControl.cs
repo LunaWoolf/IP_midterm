@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -10,12 +11,17 @@ public class PlayerControl : MonoBehaviour
     public Material material;
     public bool hasFu;
     public GameObject Fu;
-    public GameObject curGhost;
+    public GameObject curGhost = null;
     public GameObject curPattern;
     public GameObject pattern1;
     public GameObject pattern2;
+    public GameObject pattern3;
+    public GameObject pattern4;
+    public GameObject pattern5;
 
-    static int score = 0;
+    public GameObject scoreText;
+    public int score = 0;
+
 
 
     void Update()
@@ -28,7 +34,14 @@ public class PlayerControl : MonoBehaviour
             {
                 if (hit.collider.gameObject.tag == "Ghost")
                 {
+                    if (curGhost != null && curGhost != hit.collider.gameObject)
+                    {
+                        curGhost.GetComponentInChildren<SpriteRenderer>().color = new Color(0, 0, 0, 1);
+                        clearpaint();
+                    }
+
                     curGhost = hit.collider.gameObject;
+                    curGhost.GetComponentInChildren<SpriteRenderer>().color = new Color(1, 1, 1, 1);
                     if (!hasFu)
                         Fu.SetActive(true);
 
@@ -44,6 +57,19 @@ public class PlayerControl : MonoBehaviour
                             pattern2.SetActive(true);
                             curPattern = pattern2;
                             break;
+                        case 3:
+                            pattern3.SetActive(true);
+                            curPattern = pattern3;
+                            break;
+                        case 4:
+                            pattern4.SetActive(true);
+                            curPattern = pattern4;
+                            break;
+                        case 5:
+                            pattern5.SetActive(true);
+                            curPattern = pattern5;
+                            break;
+                      
                     }
                 }
 
@@ -57,6 +83,7 @@ public class PlayerControl : MonoBehaviour
             }
         }
 
+        scoreText.GetComponent<Text>().text = ""+ score;
 
 
     }
@@ -65,6 +92,7 @@ public class PlayerControl : MonoBehaviour
     {
         Destroy(curGhost);
         score += 1;
+        ScoreCounter.score = score;
         foreach (Paint p in curPattern.GetComponent<pattern>().paintlist)
         {
             p.ispaint = false;
@@ -72,5 +100,15 @@ public class PlayerControl : MonoBehaviour
         curPattern.SetActive(false);
 
 
+    }
+
+    void clearpaint()
+    {
+        
+        foreach (Paint p in curPattern.GetComponent<pattern>().paintlist)
+        {
+            p.ispaint = false;
+        }
+        curPattern.SetActive(false);
     }
 }

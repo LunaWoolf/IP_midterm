@@ -7,7 +7,7 @@ public class Choice
 {
     [TextArea(3, 10)]
     public string choice;
-    public GameObject nextDialogue;
+    public Dialogue nextDialogue;
     public GameObject image;
 
 

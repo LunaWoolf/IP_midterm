@@ -82,8 +82,6 @@ public class DialogueManager : MonoBehaviour
           
             boxAnimator.SetBool("isOpen", false);
             open = false;
-            characterimage01.SetActive(false);
-            characterimage02.SetActive(false);
         }
 
         if (dialogue.hasquestion)
@@ -128,7 +126,8 @@ public class DialogueManager : MonoBehaviour
         choices.SetActive(false);
         if (dialogue.question.Choice[num].nextDialogue != null)
         {
-            dialogue.question.Choice[num].nextDialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
+          
+            startDialogue(dialogue.question.Choice[num].nextDialogue);
 
         }
         else
@@ -137,12 +136,14 @@ public class DialogueManager : MonoBehaviour
             open = false;
         }
 
-        characterimage01.SetActive(false);
-        characterimage02.SetActive(false);
+        
     }
 
     public void characterimagedisplay()
     {
+        characterimage01.SetActive(false);
+        characterimage02.SetActive(false);
+
         if (dialogue.characterimage01)
         { 
             characterimage01.SetActive(true);

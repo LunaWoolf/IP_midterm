@@ -134,6 +134,7 @@ MonoBehaviour:
   - {fileID: 0}
   cur: 0
   target: {x: 0, y: 0, z: 0}
+  Player: {fileID: 0}
 --- !u!195 &1389766297801526210
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -277,7 +278,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: -8156526432797010691, guid: 8ffaf5581917745b799b5141b63b35e1,
     type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

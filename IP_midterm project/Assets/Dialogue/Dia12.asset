@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2d78d37b6054326b030b2a1eff844f, type: 3}
+  m_Name: Dia12
+  m_EditorClassIdentifier: 
+  name: Horse Face
+  hasquestion: 1
+  question:
+    que: And we can allow you to visit our island!
+    Choice:
+    - choice: 'You have an island?
+
+'
+      nextDialogue: {fileID: 11400000, guid: aea346cec693e47bab02627e8d8faf92, type: 2}
+      image: {fileID: 0}
+    - choice: "I don\u2019t want to go to whereever you guys live"
+      nextDialogue: {fileID: 11400000, guid: aea346cec693e47bab02627e8d8faf92, type: 2}
+      image: {fileID: 0}
+  characterimage01: 1
+  characterimage02: 0
+  sentence:
+  - 'Okay, 2 sec!
+
+'
+  - And we can allow you to visit our island!
+  nextdialogue: {fileID: 0}

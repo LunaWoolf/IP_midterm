@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2d78d37b6054326b030b2a1eff844f, type: 3}
+  m_Name: Dia08
+  m_EditorClassIdentifier: 
+  name: Bull Head
+  hasquestion: 1
+  question:
+    que: Now come and help us!
+    Choice:
+    - choice: "That\u2019s rude \n"
+      nextDialogue: {fileID: 11400000, guid: c160f664e6dfd417aac498e741cf91ad, type: 2}
+      image: {fileID: 0}
+    - choice: I will pass
+      nextDialogue: {fileID: 11400000, guid: c160f664e6dfd417aac498e741cf91ad, type: 2}
+      image: {fileID: 0}
+  characterimage01: 0
+  characterimage02: 1
+  sentence:
+  - We need someone with strong internal power to help us bring those ghosts back.
+  - And we found you, that is.
+  - Now come and help us!
+  nextdialogue: {fileID: 0}

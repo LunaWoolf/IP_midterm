@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e2d78d37b6054326b030b2a1eff844f, type: 3}
+  m_Name: Dia06
+  m_EditorClassIdentifier: 
+  name: Horse Face
+  hasquestion: 1
+  question:
+    que: You are fine
+    Choice:
+    - choice: 'Then why you guys need me?
+
+'
+      nextDialogue: {fileID: 11400000, guid: 524c54f64c39e4cf99b38c135d353c61, type: 2}
+      image: {fileID: 0}
+  characterimage01: 1
+  characterimage02: 0
+  sentence:
+  - 'If you die, you will see Mr.black and Mr. white '
+  - They are in charge of bringing people who are dead to Hades.
+  - "But that\u2019s not our job."
+  - We protect the peaceful life in both this world and the afterworld.
+  - You are fine
+  nextdialogue: {fileID: 0}

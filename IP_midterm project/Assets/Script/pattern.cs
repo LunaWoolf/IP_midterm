@@ -16,10 +16,7 @@ public class pattern : MonoBehaviour
             paintlist.Add(child.GetComponent<Paint>());
         }
     }
-    void Update()
-    {
-       
-    }
+
 
     public void checkpaint()
     {
