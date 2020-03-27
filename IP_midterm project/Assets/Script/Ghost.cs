@@ -17,7 +17,6 @@ public class Ghost : MonoBehaviour
     void Start()
     {
         pattern = Random.Range(1, 6);
-       
     }
 
   

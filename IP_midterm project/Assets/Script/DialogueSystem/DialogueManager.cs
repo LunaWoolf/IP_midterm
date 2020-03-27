@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class DialogueManager : MonoBehaviour
 {
@@ -134,8 +136,9 @@ public class DialogueManager : MonoBehaviour
         {
             boxAnimator.SetBool("isOpen", false);
             open = false;
-        }
 
+            SceneManager.LoadScene("Game");
+        }
         
     }
 

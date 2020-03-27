@@ -19,9 +19,8 @@ public class EndStageControl : MonoBehaviour
 
     public void restart()
     {
-        
+        ScoreCounter.score = 0;
        SceneManager.LoadScene("Game");
-         
-        
+
     }
 }
