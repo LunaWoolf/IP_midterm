@@ -88,7 +88,7 @@ public class DialogueManager : MonoBehaviour
           
             boxAnimator.SetBool("isOpen", false);
             open = false;
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene("Instruction");
         }
 
         if (dialogue.hasquestion)
