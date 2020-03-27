@@ -9,12 +9,14 @@ public class Dialogue: ScriptableObject
     public new string name;
     public bool hasquestion;
     public Question question;
+    public bool characterimage01;
+    public bool characterimage02;
 
 
 
     [TextArea(3, 10)]
     public string[] sentence;
 
-    public GameObject nextdialogue;
+    public Dialogue nextdialogue;
 
 }

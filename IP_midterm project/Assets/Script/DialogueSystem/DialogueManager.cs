@@ -5,56 +5,53 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public Queue<string> sentences;
+    //——————————————————————————————————————————————————————————————————————————Dialogue Set up
     public Text nameText;
     public Text diaText;
+    public Dialogue dialogue;
+    public Queue<string> sentences;
     public GameObject continuebutton;
+    public GameObject choices;
     public Animator boxAnimator;
     public bool open;
-    public GameObject choices;
-    public Dialogue dialogue;
-    //_______________________________________
-    public Button switchscene;
-
-
+    public GameObject characterimage01;
+    public GameObject characterimage02;
 
     void Start()
     {
-        choices = GameObject.Find("Choices");
         choices.SetActive(false);
         sentences = new Queue<string>();
-        if (switchscene != null)
-        {
-            switchscene.enabled = false;
-            switchscene.GetComponentInChildren<Text>().enabled = false;
-            switchscene.image.enabled = false;
-        }
     }
 
 
     public void startDialogue(Dialogue dialogue)
     {
+        //————————————————————————————————————————————————————————————————-———— set up
+        sentences = new Queue<string>();
         nameText.enabled = true;
         diaText.enabled = true;
         continuebutton.SetActive(true);
-
-
         this.dialogue = dialogue;
-        sentences = new Queue<string>();
         open = true;
         boxAnimator.SetBool("isOpen", true);
         nameText.text = dialogue.name;
+        characterimagedisplay();
+
+        //——————————————————————————————————————————————————————————————————————Enqueue Sentence
         foreach (string sentence in dialogue.sentence)
         {
             sentences.Enqueue(sentence);
         }
 
-        displayNextSentence();
+        //displayNextSentence();
+        string curSentence = sentences.Dequeue();
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(curSentence));
     }
 
     public void displayNextSentence()
     {
-
+        
         if (sentences.Count == 0)
         {
             endDialogue(dialogue);
@@ -64,9 +61,10 @@ public class DialogueManager : MonoBehaviour
         string curSentence = sentences.Dequeue();
         StopAllCoroutines();
         StartCoroutine(TypeSentence(curSentence));
-        //diaText.text = curSentence;
+
     }
 
+    //——————————————————————————————————————————————————————————————————————————Typing animation
     IEnumerator TypeSentence(string sentence)
     {
         diaText.text = "";
@@ -79,17 +77,15 @@ public class DialogueManager : MonoBehaviour
 
     public void endDialogue(Dialogue dialogue)
     {
-        if (switchscene != null)
-        {
-            switchscene.enabled = true;
-            switchscene.image.enabled = true;
-            switchscene.GetComponentInChildren<Text>().enabled = true;
-        }
+
 
         if (!dialogue.hasquestion)
         {
+          
             boxAnimator.SetBool("isOpen", false);
             open = false;
+            characterimage01.SetActive(false);
+            characterimage02.SetActive(false);
         }
 
         if (dialogue.hasquestion)
@@ -99,10 +95,10 @@ public class DialogueManager : MonoBehaviour
 
         if (dialogue.nextdialogue != null)
         {
-            dialogue.nextdialogue.GetComponent<DialogueTrigger>().TriggerDialogue();
+            startDialogue(dialogue.nextdialogue);
         }
-
     }
+
 
     public void loadquestion(Dialogue dialogue)
     {
@@ -121,8 +117,6 @@ public class DialogueManager : MonoBehaviour
         }
         else
             choices.transform.Find("Choi02").gameObject.SetActive(false);
-
-
     }
 
     public void runNextDialogue(int num)
@@ -145,8 +139,20 @@ public class DialogueManager : MonoBehaviour
             open = false;
         }
 
-
-
+        characterimage01.SetActive(false);
+        characterimage02.SetActive(false);
     }
 
+    public void characterimagedisplay()
+    {
+        if (dialogue.characterimage01)
+        { 
+            characterimage01.SetActive(true);
+        }
+
+        if (dialogue.characterimage02)
+        {
+            characterimage02.SetActive(true);
+        }
+    }
 }
