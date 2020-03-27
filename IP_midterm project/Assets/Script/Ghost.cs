@@ -12,6 +12,8 @@ public class Ghost : MonoBehaviour
     public int cur;
     public Vector3 target;
     public GameObject Player;
+    public Animator trans;
+
     //public float speed;
 
     void Start()
@@ -25,8 +27,6 @@ public class Ghost : MonoBehaviour
         
         if (na.hasPath == false && na.velocity == Vector3.zero)
         {
-            //na.speed = speed;
-            //cur = Random.Range(0, points.Length);
             na.SetDestination(Player.transform.position);
         }
     }
@@ -35,9 +35,17 @@ public class Ghost : MonoBehaviour
     {
         if (col.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene("Endstage");
-            Destroy(col.gameObject);
+            StartCoroutine(LoadScene());
+            col.gameObject.GetComponent<MeshRenderer>().enabled =false;
           
         }
     }
+
+    private IEnumerator LoadScene()
+    {
+        trans.SetTrigger("trans");
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Endstage");
+    }
+
 }

@@ -16,14 +16,8 @@ public class InstructionStage : MonoBehaviour
     public void nextScene()
     {
 
-        StartCoroutine(Wait());
-
-    }
-
-    private IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(6f);
         StartCoroutine(LoadScene());
+
     }
 
     private IEnumerator LoadScene()

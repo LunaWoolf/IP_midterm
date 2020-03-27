@@ -18,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     public bool open;
     public GameObject characterimage01;
     public GameObject characterimage02;
+    public Animator trans;
 
     void Start()
     {
@@ -88,7 +89,7 @@ public class DialogueManager : MonoBehaviour
           
             boxAnimator.SetBool("isOpen", false);
             open = false;
-            SceneManager.LoadScene("Instruction");
+            StartCoroutine(LoadScene());
         }
 
         if (dialogue.hasquestion)
@@ -156,5 +157,12 @@ public class DialogueManager : MonoBehaviour
         {
             characterimage02.SetActive(true);
         }
+    }
+
+    private IEnumerator LoadScene()
+    {
+        trans.SetTrigger("trans");
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene("Instruction");
     }
 }
