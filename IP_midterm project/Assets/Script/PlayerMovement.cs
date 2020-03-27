@@ -5,18 +5,11 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed;
-    public bool moveable = true;
-
-    void Start()
-    {
-        
-    }
-
+ 
     
     void Update()
     {
-        if (moveable)
-        {
+       
             if (Input.GetKey(KeyCode.W))
             {
                 transform.position += new Vector3(0, 0, moveSpeed * Time.deltaTime);
@@ -36,51 +29,7 @@ public class PlayerMovement : MonoBehaviour
                 transform.position += new Vector3(-moveSpeed * Time.deltaTime, 0, 0);
             }
 
-        }
-        
-
-
-        /*if (Input.GetKeyDown(KeyCode.W))
-        {
-            this.transform.localRotation = Quaternion.Euler(0, 0, 0);
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            this.transform.localRotation = Quaternion.Euler(0, 90, 0);
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            this.transform.localRotation = Quaternion.Euler(0, -90, 0);
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            this.transform.localRotation = Quaternion.Euler(0, 180, 0);
-
-        }*/
-    }
-
-    private void OnTriggerEnter(Collider col)
-    {
-        if (col.gameObject.tag == "Wall")
-        {
-            moveable = false;
-
-        }
     }
 
 
-    private void OnTriggerExit(Collider col)
-    {
-        if (col.gameObject.tag == "Wall")
-        {
-            moveable = true;
-
-        }
-    }
 }

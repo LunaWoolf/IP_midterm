@@ -156,7 +156,7 @@ Camera:
   m_GameObject: {fileID: 231329715}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -238,8 +238,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -271, y: -27.075}
-  m_SizeDelta: {x: 267.1, y: 435.85}
+  m_AnchoredPosition: {x: -264.23, y: -51.9}
+  m_SizeDelta: {x: 253.55, y: 386.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &461048571
 MonoBehaviour:
@@ -414,8 +414,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 286, y: -27.075}
-  m_SizeDelta: {x: 267.1, y: 435.85}
+  m_AnchoredPosition: {x: 271.72, y: -51.9}
+  m_SizeDelta: {x: 238.55, y: 386.2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &936411772
 MonoBehaviour:

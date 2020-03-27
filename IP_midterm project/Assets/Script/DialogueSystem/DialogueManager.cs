@@ -79,11 +79,16 @@ public class DialogueManager : MonoBehaviour
 
     public void endDialogue(Dialogue dialogue)
     {
-        if (!dialogue.hasquestion)
+
+        if (dialogue.nextdialogue != null)
+        {
+            startDialogue(dialogue.nextdialogue);
+        }else if (!dialogue.hasquestion)
         {
           
             boxAnimator.SetBool("isOpen", false);
             open = false;
+            SceneManager.LoadScene("Game");
         }
 
         if (dialogue.hasquestion)
@@ -91,10 +96,7 @@ public class DialogueManager : MonoBehaviour
             loadquestion(dialogue);
         }
 
-        if (dialogue.nextdialogue != null)
-        {
-            startDialogue(dialogue.nextdialogue);
-        }
+     
     }
 
 
@@ -136,8 +138,6 @@ public class DialogueManager : MonoBehaviour
         {
             boxAnimator.SetBool("isOpen", false);
             open = false;
-
-            SceneManager.LoadScene("Game");
         }
         
     }
